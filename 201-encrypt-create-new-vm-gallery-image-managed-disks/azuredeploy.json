@@ -92,7 +92,7 @@
     "publicIPAddressName": "[toLower(concat('publicIP',parameters('vmName')))]",
     "publicIPAddressType": "Dynamic",
     "nicName": "[toLower(concat('nic',parameters('vmName')))]",
-    "keyVaultURL": "[concat('https://', parameters('keyVaultName'), '.vault.azure.net/')]",
+    "keyVaultURL": "[concat('https://', parameters('keyVaultName'), '.vault.usgovcloudapi.net/')]",
     "keyVaultResourceID": "[concat(subscription().id,'/resourceGroups/',parameters('keyVaultResourceGroup'),'/providers/Microsoft.KeyVault/vaults/', parameters('keyVaultName'))]"
   },
 
@@ -181,7 +181,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-encrypt-running-windows-vm/azuredeploy.json",
+          "uri": "https://raw.githubusercontent.com/jomolesk/azure-quickstart-templates/master/201-encrypt-running-windows-vm/azuredeploy.json",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
