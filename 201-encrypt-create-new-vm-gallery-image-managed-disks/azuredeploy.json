@@ -22,7 +22,7 @@
     },
     "vmSize": {
       "type": "string",
-      "defaultValue": "Standard_D2",
+      "defaultValue": "Standard_D2_v2",
       "metadata": {
         "description": "Size of VM"
       }
@@ -85,7 +85,7 @@
   "variables": {
     "imagePublisher": "MicrosoftWindowsServer",
     "imageOffer": "WindowsServer",
-    "osSku": "2012-R2-Datacenter",
+    "osSku": "2016-Datacenter",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]",
     "dnsNameForPublicIP": "[toLower(parameters('vmName'))]",
