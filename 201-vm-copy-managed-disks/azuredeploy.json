@@ -64,12 +64,6 @@
         "description": "Globally unique DNS prefix for the Public IPs used to access the Virtual Machines"
       }
     },
-    "vmName": {
-      "type": "string",
-      "metadata": {
-        "description": "Name of the virtual machine"
-      }
-    },
     "aadClientID": {
       "type": "string",
       "metadata": {
@@ -325,7 +319,7 @@
         },
         "parameters": {
           "vmName": {
-            "value": "[parameters('vmName')]"
+            "value": "[concat(parameters('virtualMachineNamePrefix'),copyIndex(1))]"
           },
           "aadClientID": {
 
