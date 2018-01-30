@@ -55,13 +55,6 @@
         "Server2016"
       ]
     },
-    "availabilitySetName": {
-      "defaultValue": "MyAvailabilitySet",
-      "type": "string",
-      "metadata": {
-        "description": "Availability Set Name where the VM will be placed"
-      }
-    },
     "dnsPrefixForPublicIP": {
       "type": "string",
       "minLength": 1,
@@ -90,8 +83,6 @@
         "SkuValue": "2016-Datacenter"
       }
     },
-    "availabilitySetPlatformFaultDomainCount": "2",
-    "availabilitySetPlatformUpdateDomainCount": "5",
     "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('myVNETName'))]",
     "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('myVNETSubnet1Name'))]"
   },
@@ -193,9 +184,6 @@
             }
           ]
         },
-        "availabilitySet": {
-          "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySetName'))]"
-        },
         "diagnosticsProfile": {
           "bootDiagnostics": {
             "enabled": true,
@@ -205,7 +193,6 @@
         }
       },
       "dependsOn": [
-        "[concat('Microsoft.Compute/availabilitySets/', parameters('availabilitySetName'))]",
         "[concat('Microsoft.Storage/storageAccounts/', variables('diagnosticStorageAccountName'))]",
         "[resourceId('Microsoft.Network/networkInterfaces', concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '-NIC1'))]"
       ]
