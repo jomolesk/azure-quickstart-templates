@@ -96,7 +96,7 @@
     },
     "useExistingKek": {
       "type": "string",
-      "defaultValue": "nokek",
+      "defaultValue": "kek",
       "allowedValues": [
         "nokek",
         "kek"
