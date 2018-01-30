@@ -145,7 +145,7 @@
     "extensionVersion": "1.1",
     "encryptionOperation": "EnableEncryption",
     "keyEncryptionAlgorithm": "RSA-OAEP",
-    "updateVmUrl": "[concat('https://raw.githubusercontent.com/jomolesk/azure-quickstart-templates/master/201-encrypt-running-windows-vm/updatevm-',parameters('useExistingKek'),'.json')]",
+    "encryptVmUrl": "[concat('https://raw.githubusercontent.com/jomolesk/azure-quickstart-templates/master/201-encrypt-running-windows-vm/azuredeploy.json')]",
     "keyVaultURL": "[concat('https://', parameters('keyVaultName'), '.vault.usgovcloudapi.net/')]",
     "keyVaultResourceID": "[concat(subscription().id,'/resourceGroups/',parameters('keyVaultResourceGroup'),'/providers/Microsoft.KeyVault/vaults/', parameters('keyVaultName'))]"
   },
@@ -314,7 +314,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[variables('updateVmUrl')]",
+          "uri": "[variables('encryptVmUrl')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
