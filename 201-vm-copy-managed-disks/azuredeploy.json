@@ -127,19 +127,6 @@
       "kind": "Storage"
     },
     {
-      "type": "Microsoft.Compute/availabilitySets",
-      "name": "[parameters('availabilitySetName')]",
-      "apiVersion": "[providers('Microsoft.Compute', 'availabilitySets').apiVersions[0]]",
-      "location": "[resourceGroup().location]",
-      "properties": {
-        "platformFaultDomainCount": "[variables('availabilitySetPlatformFaultDomainCount')]",
-        "platformUpdateDomainCount": "[variables('availabilitySetPlatformUpdateDomainCount')]"
-      },
-      "sku": {
-        "name": "Aligned"
-      }
-    },
-    {
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1))]",
       "apiVersion": "2016-04-30-preview",
