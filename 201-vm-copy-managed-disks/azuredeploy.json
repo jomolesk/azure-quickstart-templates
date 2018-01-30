@@ -322,28 +322,28 @@
             "value": "[concat(parameters('virtualMachineNamePrefix'),copyIndex(1))]"
           },
           "aadClientID": {
-
+            "value": "[parameters('aadClientID')]"
           },
           "aadClientSecret": {
-
+            "value": "[parameters('aadClientSecret')]"
           },
           "keyVaultName": {
-
+            "value": "[parameters('keyVaultName')]"
           },
           "keyVaultResourceGroup": {
-
+            "value": "[parameters('keyVaultResourceGroup')]"
           },
           "useExistingKek": {
             "value": "kek"
           },
           "keyEncryptionKeyURL": {
-
+            "value": "[parameters('keyEncryptionKeyURL')]"
           },
            "volumeType": {
              "value": "All"
           },
           "sequenceVersion": {
-
+            "value": "[parameters('sequenceVersion')]"
           }
         }
       }
